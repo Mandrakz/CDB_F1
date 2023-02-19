@@ -1,4 +1,10 @@
-﻿/*Creation of Circuits table > PK => circuitID 
+﻿DROP DATABASE IF EXISTS Test
+CREATE DATABASE Test COLLATE Latin1_General_100_CI_AI_SC_UTF8;
+GO
+USE Test
+GO
+
+/*Creation of Circuits table > PK => circuitID 
 */
 Drop TABLE IF EXISTS  [Test].[dbo].[circuits]
 Create TABLE [Test].[dbo].[circuits] (
@@ -17,21 +23,6 @@ url VARCHAR(255) NOT NULL
 
 );
 
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[circuits]
-ALTER COLUMN circuitRef VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[circuits]
-ALTER COLUMN name VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[circuits]
-ALTER COLUMN location VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[circuits]
-ALTER COLUMN country VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[circuits]
-ALTER COLUMN url VARCHAR(255) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 /*Creation of Constructor_results table > PK => constructorResultsId 
 */
@@ -46,11 +37,6 @@ status VARCHAR(50) NOT NULL,
 raceId INT NOT NULL,
 constructorId INT NOT NULL
 );
-
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[constructor_results]
-ALTER COLUMN status VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
 
 /*Creation of [constructor_standings] table > PK => constructorStandingsId 
 */
@@ -68,9 +54,6 @@ raceId INT NOT NULL,
 constructorId INT NOT NULL
 );
 
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[constructor_standings]
-ALTER COLUMN positionText VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 
@@ -87,18 +70,6 @@ url VARCHAR(255) NOT NULL
 );
 
 
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[constructors]
-ALTER COLUMN constructorRef VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[constructors]
-ALTER COLUMN name VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[constructors]
-ALTER COLUMN nationality VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[constructors]
-ALTER COLUMN url VARCHAR(255) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 /*Creation of [driver_standings] table > PK => driverStandingsId 
@@ -117,9 +88,6 @@ raceId INT NOT NULL,
 driverId INT NOT NULL,
 );
 
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[driver_standings]
-ALTER COLUMN positionText VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 /*Creation of [drivers] table > PK => drivers
@@ -139,24 +107,6 @@ url VARCHAR(255) NOT NULL
 
 );
 
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[drivers]
-ALTER COLUMN driverRef VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[drivers]
-ALTER COLUMN code VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[drivers]
-ALTER COLUMN forename VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[drivers]
-ALTER COLUMN surname VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[drivers]
-ALTER COLUMN nationality VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[drivers]
-ALTER COLUMN url VARCHAR(255) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 /*Creation of [lap_times] table > PK => drivers
@@ -184,9 +134,6 @@ status VARCHAR(50) NOT NULL,
 
 );
 
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[status]
-ALTER COLUMN status VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 /*Creation of [seasons] table 
@@ -198,10 +145,6 @@ year INT NOT NULL ,
 url VARCHAR(255) NOT NULL,
 
 );
-
-/*UTF-8 */
-ALTER TABLE [Test].[dbo].[seasons]
-ALTER COLUMN url VARCHAR(255) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 
@@ -232,14 +175,6 @@ sprint_time time(0),
 circuitId INT NOT NULL
 
 );
-
-/*UTF-8 */
-
-ALTER TABLE [Test].[dbo].[races]
-ALTER COLUMN name VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[races]
-ALTER COLUMN url VARCHAR(255) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
 
 
 
@@ -306,12 +241,6 @@ statusId INT NOT NULL,
 
 );
 
-ALTER TABLE [Test].[dbo].[results]
-ALTER COLUMN positionText VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[results]
-ALTER COLUMN time VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
 
 
 /*Creation of [sprint_results] table > PK => 
@@ -339,8 +268,3 @@ fastestLap INT,
 fastestLapTime time(3)
 );
 
-ALTER TABLE [Test].[dbo].[sprint_results]
-ALTER COLUMN positionText VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
-
-ALTER TABLE [Test].[dbo].[sprint_results]
-ALTER COLUMN time VARCHAR(50) COLLATE Latin1_General_100_CI_AI_SC_UTF8;
