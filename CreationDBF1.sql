@@ -141,7 +141,7 @@ status VARCHAR(50) NOT NULL,
 Drop TABLE IF EXISTS  [Test].[dbo].[seasons]
 Create TABLE [Test].[dbo].[seasons] (
 
-year INT NOT NULL ,
+year INT PRIMARY KEY  NOT NULL ,
 url VARCHAR(255) NOT NULL,
 
 );
@@ -217,7 +217,7 @@ milliseconds INT NOT NULL,
 Drop TABLE IF EXISTS  [Test].[dbo].[results]
 Create TABLE [Test].[dbo].[results] (
 
-resultId INT NOT NULL , /* Primary Key*/
+resultId INT PRIMARY KEY  NOT NULL , /* Primary Key*/
 
 number INT ,
 grid INT NOT NULL ,
@@ -267,4 +267,3 @@ milliseconds INT ,
 fastestLap INT,
 fastestLapTime time(3)
 );
-

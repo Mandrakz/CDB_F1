@@ -13,6 +13,24 @@ TRUNCATE TABLE [Test].[dbo].[pit_stops];
 TRUNCATE TABLE [Test].[dbo].[results];
 TRUNCATE TABLE [Test].[dbo].[sprint_results];
 
+
+DELETE  FROM [Test].[dbo].[constructor_results];
+DELETE FROM [Test].[dbo].[circuits];
+DELETE FROM [Test].[dbo].[constructor_standings];
+DELETE FROM [Test].[dbo].[constructors];
+DELETE FROM [Test].[dbo].[driver_standings];
+DELETE FROM [Test].[dbo].[drivers];
+DELETE FROM  [Test].[dbo].[lap_times];
+DELETE FROM  [Test].[dbo].[status];
+DELETE FROM [Test].[dbo].[seasons];
+DELETE FROM [Test].[dbo].[races];
+DELETE FROM [Test].[dbo].[qualifying];
+DELETE FROM [Test].[dbo].[pit_stops];
+DELETE FROM [Test].[dbo].[results];
+DELETE FROM [Test].[dbo].[sprint_results];
+
+
+
 DROP TABLE [Test].[dbo].[constructor_results];
 DROP TABLE [Test].[dbo].[circuits];
 DROP TABLE [Test].[dbo].[constructor_standings];
