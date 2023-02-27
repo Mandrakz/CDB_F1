@@ -33,6 +33,11 @@ ALTER TABLE [Test].[dbo].[results] DROP CONSTRAINT [FK_Results_Drivers]
 ALTER TABLE [Test].[dbo].[results] DROP CONSTRAINT [FK_Results_Constructors]
 ALTER TABLE [Test].[dbo].[results] DROP CONSTRAINT [FK_Results_Status]
 
+/*Sprint Results*/
+ALTER TABLE  [Test].[dbo].[sprint_results] DROP CONSTRAINT [FK_SprintResults_Races]
+ALTER TABLE  [Test].[dbo].[sprint_results] DROP CONSTRAINT [FK_SprintResults_Drivers]
+ALTER TABLE  [Test].[dbo].[sprint_results] DROP CONSTRAINT [FK_SprintResults_Constructors]
+ALTER TABLE  [Test].[dbo].[sprint_results] DROP CONSTRAINT [FK_SprintResults_Status]
 
 
 
