@@ -87,7 +87,7 @@ Create TABLE [Test].[dbo].[constructor_results] (
 constructorResultsId INT PRIMARY KEY NOT NULL ,
 
 points INT NOT NULL,
-status VARCHAR(50) NOT NULL,
+status VARCHAR(50) ,
 
 /* FOREIGN key*/
 raceId INT NOT NULL,
