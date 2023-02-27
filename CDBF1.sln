@@ -7,7 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		CreationDBF1.sql = CreationDBF1.sql
 		DeleteInfoF1.sql = DeleteInfoF1.sql
+		CreationDBF1_Dependencies.sql = CreationDBF1_Dependencies.sql
 		JoinQuery.sql = JoinQuery.sql
+		Delete_Dependencies.sql = Delete_Dependencies.sql
+		Only_Dependencies.sql = Only_Dependencies.sql
 	EndProjectSection
 EndProject
 Global
