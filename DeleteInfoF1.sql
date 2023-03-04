@@ -1,4 +1,5 @@
-﻿TRUNCATE TABLE [Test].[dbo].[constructor_results];
+﻿/*Delete the info of the tables > DELETE REGISTERS */
+TRUNCATE TABLE [Test].[dbo].[constructor_results];
 TRUNCATE TABLE [Test].[dbo].[circuits];
 TRUNCATE TABLE [Test].[dbo].[constructor_standings];
 TRUNCATE TABLE [Test].[dbo].[constructors];
@@ -13,7 +14,7 @@ TRUNCATE TABLE [Test].[dbo].[pit_stops];
 TRUNCATE TABLE [Test].[dbo].[results];
 TRUNCATE TABLE [Test].[dbo].[sprint_results];
 
-
+/*Delete the table WHEN i HAVE DEPENDENCIES */
 DELETE  FROM [Test].[dbo].[constructor_results];
 DELETE FROM [Test].[dbo].[circuits];
 DELETE FROM [Test].[dbo].[constructor_standings];
@@ -30,7 +31,7 @@ DELETE FROM [Test].[dbo].[results];
 DELETE FROM [Test].[dbo].[sprint_results];
 
 
-
+/*Delete the table */
 DROP TABLE [Test].[dbo].[constructor_results];
 DROP TABLE [Test].[dbo].[circuits];
 DROP TABLE [Test].[dbo].[constructor_standings];
@@ -46,6 +47,7 @@ DROP TABLE [Test].[dbo].[pit_stops];
 DROP TABLE [Test].[dbo].[results];
 DROP TABLE [Test].[dbo].[sprint_results];
 
+/*SEEING INFORMATION OF TABLES*/
 SELECT * from INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='circuits'
 SELECT * from INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='constructor_results'
 SELECT * from INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='constructor_standings'
