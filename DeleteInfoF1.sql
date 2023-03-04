@@ -14,6 +14,7 @@ TRUNCATE TABLE [Test].[dbo].[pit_stops];
 TRUNCATE TABLE [Test].[dbo].[results];
 TRUNCATE TABLE [Test].[dbo].[sprint_results];
 
+
 /*Delete the table WHEN i HAVE DEPENDENCIES */
 DELETE  FROM [Test].[dbo].[constructor_results];
 DELETE FROM [Test].[dbo].[circuits];
