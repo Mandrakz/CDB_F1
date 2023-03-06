@@ -4,7 +4,7 @@
 IF OBJECT_ID('[dwF1_LapTimes].[dbo].[fact_LapTime]') Is NOT NULL drop table [dwF1_LapTimes].[dbo].[fact_LapTime]
 create table [dwF1_LapTimes].[dbo].[fact_LapTime](
 
-fact_LapTimes_id int identity(1,2) primary key,
+fact_LapTimes_id int identity(1,1) primary key,
 
 dim_raceid int
 ,dim_driverid int
