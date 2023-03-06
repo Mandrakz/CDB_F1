@@ -20,7 +20,7 @@ SELECT  [raceId]
   FROM [Test].[dbo].[races]
 WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
 
-/*dim Circuit*/
+/*dim Circuit * */ 
 SELECT 
 		circ.circuitId,
       circ.[name]
@@ -34,7 +34,7 @@ WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
 ORDER BY date asc
 
 
-/*dim Drivers*/
+/*dim Drivers * */
 SELECT  
 	DISTINCT(r.driverId),
 	forename,
@@ -54,7 +54,7 @@ FROM (SELECT
 WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
 ORDER BY r.driverId asc
 
-/*dim Constructors*/
+/*dim Constructors * */
 SELECT  
 	DISTINCT(aux_construstor_standings.constructorId),
 	constructorRef,
@@ -72,8 +72,9 @@ FROM (SELECT
 WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
 ORDER BY constructorId ASC
 
-/*FACT table LapTimes */
-/*Join Lap Times and Races > I need date and yeard*/
+/*FACT table LapTimes *  */
+
+/*Join Lap Times and Races > I need date and yeard*//*Join Lap Times and Races > I need date and year*/
 WITH 
 LapTimes_TAB_Races
 AS (
@@ -146,5 +147,5 @@ INNER JOIN sprint_results
 	constructorId
   FROM LapTimes_TAB_drivers_TAB_sprintResults
 WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
-ORDER BY driverId ASC, raceId,lap
+ORDER BY driverId ASC, raceId,constructorId,circuitId,lap
 
