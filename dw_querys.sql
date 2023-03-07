@@ -1,11 +1,24 @@
 ﻿/*dim races*/
-SELECT  [raceId]
+WITH Result_TAB_drivers  AS
+(
+SELECT 
+		aux_results.resultId,
+		aux_results.raceId,
+		positionOrder,
+		aux_results.driverId,
+		drivers.forename,
+		drivers.surname
+  FROM [Test].[dbo].results as aux_results
+  INNER JOIN drivers ON drivers.driverId = aux_results.driverId) 
+  ,
+
+  Result_TAB_drivers_TAB_races AS
+(
+SELECT 
+		 aux_races.[raceId]
       ,[year]
       ,[round]
       ,[name]
-      ,[date]
-      ,[time]
-      ,[url]
       ,[fp1_date]
       ,[fp1_time]
       ,[fp2_date]
@@ -16,9 +29,25 @@ SELECT  [raceId]
       ,[quali_time]
       ,[sprint_date]
       ,[sprint_time]
-      ,[circuitId]
-  FROM [Test].[dbo].[races]
+      ,aux_races.circuitId,
+		Result_TAB_drivers.forename,
+		Result_TAB_drivers.surname,
+		Result_TAB_drivers.positionOrder
+  FROM races as aux_races
+  INNER JOIN Result_TAB_drivers ON Result_TAB_drivers.raceId = aux_races.raceId)
+
+
+
+
+
+/****** Script for SelectTopNRows command from SSMS  ******/
+SELECT  
+     *
+  FROM Result_TAB_drivers_TAB_races
 WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
+AND positionOrder = 1
+ORDER BY round ASC
+
 
 /*dim Circuit * */ 
 SELECT 

@@ -50,6 +50,9 @@ quali_date DATE,
 quali_time time(0),
 sprint_date DATE,
 sprint_time time(0),
+positionOrder INT NOT NULL,
+forename VARCHAR(50) NOT NULL,
+surname VARCHAR(50) NOT NULL
 
 );
 
