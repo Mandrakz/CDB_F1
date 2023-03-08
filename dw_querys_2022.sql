@@ -102,7 +102,6 @@ WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
 ORDER BY constructorId ASC
 
 /*FACT table LapTimes *  */
-
 /*Join Lap Times and Races > I need date and yeard*//*Join Lap Times and Races > I need date and year*/
 WITH 
 LapTimes_TAB_Races
@@ -143,7 +142,7 @@ INNER JOIN drivers
 
 
 /*Join with drivers and sprint results > Obtain information about constructor id*/
-  LapTimes_TAB_drivers_TAB_sprintResults
+  LapTimes_TAB_drivers_TAB_qualify
 AS (
 SELECT 
 	aux_LapTimes_TAB_drivers.raceId,--*
@@ -157,10 +156,9 @@ SELECT
 	aux_LapTimes_TAB_drivers.circuitId,--*
 	aux_LapTimes_TAB_drivers.surname ,--*
 	aux_LapTimes_TAB_drivers.forename,--*
-	constructorId
+	q1.constructorId
   FROM LapTimes_TAB_drivers AS aux_LapTimes_TAB_drivers
-INNER JOIN sprint_results
-  ON sprint_results.driverId = aux_LapTimes_TAB_drivers.driverId)
+  INNER JOIN qualifying as q1 ON aux_LapTimes_TAB_drivers.raceId = q1.raceId AND q1.driverId = aux_LapTimes_TAB_drivers.driverId)
  
 
   SELECT 
@@ -174,7 +172,6 @@ INNER JOIN sprint_results
 	year,
 	circuitId,
 	constructorId
-  FROM LapTimes_TAB_drivers_TAB_sprintResults
-WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races] ) --Last year
+  FROM LapTimes_TAB_drivers_TAB_qualify
+WHERE year IN (SELECT max(year)-1 from [Test].[dbo].[races])  
 ORDER BY driverId ASC, raceId,constructorId,circuitId,lap
-
