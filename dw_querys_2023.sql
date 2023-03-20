@@ -1,4 +1,5 @@
 ﻿/*dim races*/
+/*dim races*/
 WITH Result_TAB_drivers  AS
 (
 SELECT 
@@ -7,7 +8,8 @@ SELECT
 		positionOrder,
 		aux_results.driverId,
 		drivers.forename,
-		drivers.surname
+		drivers.surname,
+		aux_results.constructorId
   FROM [Test].[dbo].results as aux_results
   INNER JOIN drivers ON drivers.driverId = aux_results.driverId) 
   ,
@@ -32,7 +34,9 @@ SELECT
       ,aux_races.circuitId,
 		Result_TAB_drivers.forename,
 		Result_TAB_drivers.surname,
-		Result_TAB_drivers.positionOrder
+		Result_TAB_drivers.positionOrder,
+		Result_TAB_drivers.driverID,
+		Result_TAB_drivers.constructorId
   FROM races as aux_races
   INNER JOIN Result_TAB_drivers ON Result_TAB_drivers.raceId = aux_races.raceId)
 
