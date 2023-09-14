@@ -5,13 +5,17 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A55EAF91-F8C4-4341-9129-6CC983F483D3}"
 	ProjectSection(SolutionItems) = preProject
-		CreationDBF1.sql = CreationDBF1.sql
+		1_CreationDBF1.sql = 1_CreationDBF1.sql
+		2_CreationDBF1_Dependencies.sql = 2_CreationDBF1_Dependencies.sql
+		3_Delete_Dependencies.sql = 3_Delete_Dependencies.sql
+		4_Delete_Dependencies_Conditional.sql = 4_Delete_Dependencies_Conditional.sql
+		5_Only_Dependencies.sql = 5_Only_Dependencies.sql
+		6_CreationDBF1_datawarehouse.sql = 6_CreationDBF1_datawarehouse.sql
+		7_CreationDBF1_datawarehouse_dependencies.sql = 7_CreationDBF1_datawarehouse_dependencies.sql
+		8_Delete_Dependencies_datawarehouse.sql = 8_Delete_Dependencies_datawarehouse.sql
 		DeleteInfoF1.sql = DeleteInfoF1.sql
-		CreationDBF1_Dependencies.sql = CreationDBF1_Dependencies.sql
+		9_Only_Dependencies_datawarehouse.sql = 9_Only_Dependencies_datawarehouse.sql
 		JoinQuery.sql = JoinQuery.sql
-		Delete_Dependencies_Conditional.sql = Delete_Dependencies_Conditional.sql
-		Delete_Dependencies.sql = Delete_Dependencies.sql
-		Only_Dependencies.sql = Only_Dependencies.sql
 	EndProjectSection
 EndProject
 Global
